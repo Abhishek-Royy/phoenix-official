@@ -48,7 +48,7 @@ body {
 
 .active{
   color: greenyellow;
-  border-bottom: 2px solid greenyellow; /* Optionally add a bottom border */
+ 
   font-weight: bold;
 }
 

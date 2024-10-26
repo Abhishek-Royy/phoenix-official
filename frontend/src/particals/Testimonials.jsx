@@ -58,15 +58,15 @@ function Testimonials() {
 
   return (
     <div
-      className="wrapper w-full h-auto py-20"
-      style={{
-        background: `url("https://xmple.com/wallpaper/linear-blue-black-gradient-2560x1440-c2-010204-080b2b-a-225-f-14.svg")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="wrapper w-full h-auto py-20 dark:bg-gradient-to-l to-black from-[#111C29]"
+      // style={{
+      //   background: `url("https://xmple.com/wallpaper/linear-blue-black-gradient-2560x1440-c2-010204-080b2b-a-225-f-14.svg")`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      // }}
     >
       <div className="md:w-full w-[90%] mx-auto">
-        <h1 className="text-center text-3xl font-semibold leading-8 text-gray-100 mb-10">
+        <h1 className="text-center text-3xl font-semibold leading-8 dark:text-gray-100 mb-10">
           What our Client Says ?
         </h1>
         <div className="max-w-screen-lg mx-auto text-center">
@@ -74,7 +74,7 @@ function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <figure
                 key={index}
-                className="max-w-screen-md  mb-10 md:h-max h-auto py-10 bg-[#ffffff17] mx-2" // Added margin on mobile view
+                className="max-w-screen-md  mb-10 md:h-max h-auto py-10 bg-[#3a3e8641] dark:bg-[#ffffff17] mx-2" // Added margin on mobile view
               >
                 <svg
                   className="w-10 h-10 mx-auto mb-3 text-yellow-300 dark:text-yellow-200"
@@ -86,7 +86,7 @@ function Testimonials() {
                   <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
                 </svg>
                 <blockquote>
-                  <p className="text-2xl italic font-medium text-gray-200 dark:text-white">
+                  <p className="text-2xl italic font-medium  dark:text-white">
                     {testimonial.quote}
                   </p>
                 </blockquote>
@@ -97,7 +97,7 @@ function Testimonials() {
                     alt="profile picture"
                   />
                   <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
-                    <cite className="pe-3 font-medium text-gray-100 dark:text-white">
+                    <cite className="pe-3 font-medium  dark:text-white">
                       {testimonial.name}
                     </cite>
                   </div>

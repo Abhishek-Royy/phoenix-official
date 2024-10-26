@@ -8,7 +8,7 @@ function Achievements() {
   const fetchAchievements = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/api/v1/achivements/achivements`
+        `${import.meta.env.VITE_BACKEND_URL}/achivements/achivements`
       );
       setallAchivements(response.data.message);
       console.log(allAchivements);
@@ -24,8 +24,8 @@ function Achievements() {
 
   return (
     <>
-      <div className=" bg-[#111C29] w-full md:px-32 py-20">
-        <h1 className="text-3xl font-bold text-center mb-20 text-gray-100">
+      <div className=" dark:bg-[#111C29] w-full md:px-32 py-20">
+        <h1 className="text-3xl font-bold text-center mb-20 dark:text-gray-100">
           Milestones of Excellence
         </h1>
         <div className="card-cont flex  flex-wrap md:w-full w-[92%] mx-auto  items-center justify-center gap-10">

@@ -52,8 +52,12 @@ const Navbar = () => {
             </NavLink>
           </li>
         ))}
+
+        <Toggle />
       </ul>
-      <Toggle />
+      <div className="flex md:hidden">
+        <Toggle />
+      </div>
       {/* Mobile Navigation Menu Toggle */}
       <div onClick={handleNav} className="block md:hidden">
         {nav ? <IoCloseSharp size={30} /> : <RiMenu3Fill size={30} />}
@@ -63,7 +67,7 @@ const Navbar = () => {
         initial={false}
         animate={nav ? "open" : "closed"}
         variants={variants}
-        className={`fixed md:hidden left-0 top-20 w-full h-full border-r border-r-gray-900 bg-[#ffffff41] ease-in-out duration-100 ${
+        className={`fixed md:hidden left-0 top-20 w-full h-full border-r border-r-gray-900 bg-[#101A26] ease-in-out duration-75 ${
           nav ? "block" : "hidden"
         }`}
       >
@@ -72,7 +76,7 @@ const Navbar = () => {
           <NavLink to={item.route} onClick={() => setNav(false)}>
             <li
               key={item.id}
-              className=" p-4 text-3xl border-b-2 border-white rounded-xl duration-300 hover:text-black text-black cursor-pointer  my-5"
+              className=" p-4 text-3xl border-b-2 border-white rounded-xl duration-300 hover:text-black text-white cursor-pointer  my-5"
             >
               {item.text}
             </li>
@@ -84,7 +88,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
 
 // import React, { useState, useEffect } from "react";
 // import { IoCloseSharp } from "react-icons/io5";
