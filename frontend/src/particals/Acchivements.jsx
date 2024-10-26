@@ -35,7 +35,7 @@ function Achievements() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               whileHover={{ y: -5, x: -1 }}
-              className="md:w-[617px] w-full md:h-[35vh] h-auto border md:flex block cursor-pointer"
+              className="md:w-[617px] w-full md:h-[35vh] h-auto dark:border-white border border-black md:flex block cursor-pointer"
               style={{ borderRadius: "10px" }}
             >
               <div
@@ -50,10 +50,10 @@ function Achievements() {
                 />
               </div>
               <div className="md:w-1/2 w-full h-full p-4">
-                <h5 className="h-[40%] text-white overflow-hidden font-semibold text-2xl">
+                <h5 className="h-[40%] dark:text-white overflow-hidden font-semibold text-2xl">
                   {acchivement.aTitle}
                 </h5>
-                <p className="w-full text-[14px] pt-5 max-h-[60%] text-gray-200 overflow-hidden ">
+                <p className="w-full text-[14px] pt-5 max-h-[60%] dark:text-gray-200 overflow-hidden ">
                   {acchivement.aDescription}
                 </p>
               </div>

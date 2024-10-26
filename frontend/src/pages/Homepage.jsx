@@ -4,6 +4,8 @@ import TrustCompany from "@/particals/TrustCompany";
 
 import Aboutpage from "./Aboutpage";
 import Testimonials from "@/particals/Testimonials";
+import Faq from "@/particals/Faqs";
+import Teammember from "./Teammember";
 
 function Homepage() {
   return (
@@ -20,10 +22,15 @@ function Homepage() {
           <Aboutpage />
         </div>
 
+
+        {/* --------------TEAM MEMBERS--------------------------------------------------- */}
+        <Teammember/>
+
         {/* ------------------TESTIMONIALS---------------------------------------- */}
        <Testimonials/>
           
-     
+     {/* ----------------------FAQ------------------------------------------------------- */}
+     <Faq/>
       </div>
     </>
   );
