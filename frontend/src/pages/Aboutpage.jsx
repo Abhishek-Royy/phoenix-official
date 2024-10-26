@@ -12,7 +12,7 @@ function Aboutpage() {
        <div className="servicesweprovide">
           <Servicesweprovide />
         </div>
-        <div className="first-slider ">
+        <div className="first-slider w-full ">
           <FirstSlider />
         </div>
         <div className="statecounter">

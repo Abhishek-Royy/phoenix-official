@@ -61,7 +61,7 @@ function FirstSlider() {
   return (
     <>
       <div className="w-full relative z-50 h-auto px-2 md:px-32 py-16 dark:bg-[#111C29]">
-        <div className="slider-container w-full h-full">
+        <div className="slider-container lg:w-full w-[90%] mx-auto h-full">
           <Slider {...settings}>
             {slideImage.map((item) => (
               <div className="w-full h-[25vh] md:h-[25vh] px-2" key={item.id}>

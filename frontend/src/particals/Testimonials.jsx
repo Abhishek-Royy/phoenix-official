@@ -69,7 +69,7 @@ function Testimonials() {
         <h1 className="text-center text-3xl font-semibold leading-8 dark:text-gray-100 mb-10">
           What our Client Says ?
         </h1>
-        <div className="max-w-screen-lg mx-auto text-center">
+        <div className="w-[97%] mx-auto text-center">
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
               <figure
