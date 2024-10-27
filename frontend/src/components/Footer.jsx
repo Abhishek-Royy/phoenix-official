@@ -17,10 +17,9 @@ const Footer = () => {
                 </div>
               </p>
               <p className="mt-[18px] text-[15px] font-normal dark:text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                blanditiis ipsam nesciunt ex, a illum non molestias at. Dolor
-                iusto ea sunt a ipsa eveniet accusamus maiores consectetur!
-                Cumque, non?
+                Phoenix Tech is a dynamic technology company specializing in
+                innovative tech solutions, web development, and app services to
+                empower businesses.
               </p>
               <div className="mt-[18px]  flex gap-4">
                 <a
@@ -74,7 +73,7 @@ const Footer = () => {
                 <a
                   className="hover:scale-110"
                   target="_blank"
-                  href="https://www.linkedin.com/in/abhishek-roy-4a5244239/"
+                  href="https://www.linkedin.com/in/phoenix-tech-840a24334/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B2o6erIogRxWr0tjvc%2BsCiA%3D%3D"
                 >
                   <img
                     alt="inkdin icon"
@@ -112,8 +111,8 @@ const Footer = () => {
                     href="mailto:techphoenixco@gmail.com"
                     className="font-Inter text-[14px] font-medium dark:text-gray-400"
                   >
-                         {" "}
-                         techphoenixco@gmail.com
+                    {" "}
+                    techphoenixco@gmail.com
                   </a>
                   <p className="font-Inter text-[12px] font-medium dark:text-gray-400">
                     Support Email
@@ -136,10 +135,7 @@ const Footer = () => {
                   </svg>
                 </div>
                 <div className="ml-[18px]">
-                  <p
-              
-                    className="font-Inter text-[14px] font-medium dark:text-gray-400"
-                  >
+                  <p className="font-Inter text-[14px] font-medium dark:text-gray-400">
                     Barasat, South 24 Pargana, 700124
                   </p>
                   <p className="font-Inter text-[12px] font-medium dark:text-gray-400">
