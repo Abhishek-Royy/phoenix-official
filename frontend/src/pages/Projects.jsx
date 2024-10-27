@@ -5,15 +5,15 @@
 
 // function Project() {
 //   const [projectdata, setProjectdata] = useState([]);
-//   const [selectedProject, setSelectedProject] = useState(null); 
-//   const [isPopupOpen, setIsPopupOpen] = useState(false); 
+//   const [selectedProject, setSelectedProject] = useState(null);
+//   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
 //   const fetchProjectFromBackend = async () => {
 //     try {
 //       const response = await axios.get(
 //         `${import.meta.env.VITE_BACKEND_URL}/projects/projects`
 //       );
-//       setProjectdata(response.data.message); 
+//       setProjectdata(response.data.message);
 //     } catch (err) {
 //       console.error("Error fetching projects:", err);
 //     }
@@ -101,10 +101,6 @@
 
 // export default Project;
 
-
-
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
@@ -152,7 +148,9 @@ function Project() {
           Transforming Ideas into Reality
         </h1>
         <p className="text-lg dark:text-white text-center">
-          Our work reflects a commitment to innovation and impact, turning ideas into meaningful solutions. We strive to create lasting change through every project we undertake.
+          Our work reflects a commitment to innovation and impact, turning ideas
+          into meaningful solutions. We strive to create lasting change through
+          every project we undertake.
         </p>
 
         {loading ? (
@@ -171,7 +169,11 @@ function Project() {
                 className="cont lg:w-[300px] w-[90%] h-auto bg-gray-100 p-3 rounded-md shadow-xl cursor-pointer"
               >
                 <div className="img w-full h-[180px]">
-                  <img className="w-full h-full" src={item.pCoverImage} alt="" />
+                  <img
+                    className="w-full h-full object-contain"
+                    src={item.pCoverImage}
+                    alt=""
+                  />
                 </div>
                 <h5 className="text-2xl font-medium mt-2">{item.pTitle}</h5>
               </motion.div>

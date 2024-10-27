@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 
-
 function Teammember() {
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -60,7 +59,7 @@ function Teammember() {
           </button>
           <div className="flex flex-col items-center">
             <img
-              className="w-24 h-24 mb-3 rounded-full shadow-lg"
+              className="w-48 h-44 mb-3 rounded-full shadow-lg object-cover"
               src={Avatar}
               alt={Name}
             />
@@ -92,12 +91,12 @@ function Teammember() {
         <h1 className="lg:text-5xl text-2xl  font-extrabold dark:text-gray-100 text-center mb-20">
           Experience & Our Professional Teammembers
         </h1>
-        <div className="w-full mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="w-full mx-auto max-w-sm  rounded-lg  ">
           {loading ? (
-             <div className="text-center">
-             <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-solid mx-auto mb-8"></div>
-             <p className="text-lg dark:text-gray-100">Loading services...</p>
-           </div>
+            <div className="text-center">
+              <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-solid mx-auto mb-8"></div>
+              <p className="text-lg dark:text-gray-100">Loading services...</p>
+            </div>
           ) : (
             members.map((item) => (
               <div
@@ -106,14 +105,14 @@ function Teammember() {
                 onClick={() => handleMemberClick(item)}
               >
                 <img
-                  className="w-24 h-24 mb-3 rounded-full shadow-lg"
+                  className="w-40 h-40 mb-3 rounded-full shadow-lg object-cover"
                   src={item.Avatar}
                   alt={item.Name}
                 />
-                <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+                <h5 className="mb-1 text-3xl font-medium text-gray-900 dark:text-white">
                   {item.Name}
                 </h5>
-                <span className="text-sm text-gray-500 dark:text-gray-400">
+                <span className="text-lg text-gray-500 dark:text-gray-400">
                   {item.RoleInCompany}
                 </span>
               </div>

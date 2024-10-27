@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <motion.div
-      className="bg-[#111C29] flex justify-between items-center h-20 max-w-full sticky top-0 mx-auto px-2 md:px-32 text-white z-[999999999]"
+      className="dark:bg-[#111C29] bg-gray-200 flex justify-between items-center h-20 max-w-full sticky top-0 mx-auto px-2 md:px-32 dark:text-white z-[999999999]"
       style={{ boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px" }}
     >
       <Link to="/">
