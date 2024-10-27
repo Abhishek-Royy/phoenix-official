@@ -136,12 +136,12 @@ const Footer = () => {
                   </svg>
                 </div>
                 <div className="ml-[18px]">
-                  <a
-                    href="mailto:help@lorem.com"
+                  <p
+              
                     className="font-Inter text-[14px] font-medium text-gray-400"
                   >
                     Barasat, South 24 Pargana, 700124
-                  </a>
+                  </p>
                   <p className="font-Inter text-[12px] font-medium text-gray-400">
                     Address
                   </p>
