@@ -35,7 +35,7 @@ function Achievements() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               whileHover={{ y: -5, x: -1 }}
-              className="md:w-[617px] w-full md:h-[35vh] h-auto dark:border-white border border-black md:flex block cursor-pointer"
+              className="md:w-[610px] w-full md:h-[35vh] h-auto dark:border-white border border-black md:flex block cursor-pointer"
               style={{ borderRadius: "10px" }}
             >
               <div

@@ -1,9 +1,34 @@
-import React from "react";
+
+import React, {  useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Contactpage() {
-  const handleSubmit = (e) => {
+  const form = useRef();
+  const [loading, setLoading] = useState(false);
+
+  const sendEmail = (e) => {
     e.preventDefault();
-    // Add form submission logic here
+    setLoading(true);
+
+    emailjs
+      .sendForm("service_gzda029", "template_y03nfoc", form.current, {
+        publicKey: "CoDf0CpccE7p0mjIR",
+      })
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast.success("Message sent successfully.");
+          setLoading(false);
+          e.target.reset();
+        },
+        (err) => {
+          console.error("FAILED...", err);
+          toast.error("Message failed to send. Please try again.");
+          setLoading(false);
+        }
+      );
   };
 
   return (
@@ -17,7 +42,7 @@ function Contactpage() {
             Got a technical issue? Want to send feedback about a beta feature?
             Need details about our Business plan? Let us know.
           </p>
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <form ref={form} onSubmit={sendEmail} className="space-y-8">
             <div>
               <label
                 htmlFor="name"
@@ -26,10 +51,11 @@ function Contactpage() {
                 Your Name
               </label>
               <input
-                type="name"
+                type="text"
                 id="name"
+                name="from_name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                placeholder="Jhon Deo"
+                placeholder="John Doe"
                 required
               />
             </div>
@@ -38,13 +64,14 @@ function Contactpage() {
                 htmlFor="email"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
-                Your email
+                Your Email
               </label>
               <input
                 type="email"
                 id="email"
+                name="from_email"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                placeholder="name@flowbite.com"
+                placeholder="name@example.com"
                 required
               />
             </div>
@@ -58,35 +85,38 @@ function Contactpage() {
               <input
                 type="tel"
                 id="phone"
+                name="from_phone"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                 placeholder="+91 1234567890"
                 required
               />
             </div>
-
             <div className="sm:col-span-2">
               <label
                 htmlFor="message"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
               >
-                Your message
+                Your Message
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows="6"
                 className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Leave a comment..."
+                required
               ></textarea>
             </div>
             <button
               type="submit"
               className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-700 sm:w-fit hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Send message
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
       </section>
+      <ToastContainer position="bottom-right" theme="colored" />
     </div>
   );
 }
