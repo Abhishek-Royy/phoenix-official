@@ -112,7 +112,8 @@ const Footer = () => {
                     href="mailto:help@lorem.com"
                     className="font-Inter text-[14px] font-medium text-gray-400"
                   >
-                    phoenix.co12@gmail.com
+                         {" "}
+                         techphoenixco@gmail.com
                   </a>
                   <p className="font-Inter text-[12px] font-medium text-gray-400">
                     Support Email
@@ -162,7 +163,7 @@ const Footer = () => {
                   <li className="mt-[15px]">
                     <NavLink
                       className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                      to="/footer/refundPolicy"
+                      to="/refundPolicy"
                     >
                       Refund Policy
                     </NavLink>
@@ -170,7 +171,7 @@ const Footer = () => {
                   <li className="mt-[15px]">
                     <NavLink
                       className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                      to="/footer/termCondition"
+                      to="/termCondition"
                     >
                       Terms and conditions
                     </NavLink>
@@ -178,7 +179,7 @@ const Footer = () => {
                   <li className="mt-[15px]">
                     <NavLink
                       className="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
-                      to="/footer/privacypolicy"
+                      to="/privacypolicy"
                     >
                       Privacy policy
                     </NavLink>

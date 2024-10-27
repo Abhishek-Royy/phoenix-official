@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
-import Spiner from "@/components/Spiner";
+
 
 function Teammember() {
   const [members, setMembers] = useState([]);
@@ -94,9 +94,10 @@ function Teammember() {
         </h1>
         <div className="w-full mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           {loading ? (
-            <div className="flex justify-center items-center py-10">
-              <Spiner />
-            </div>
+             <div className="text-center">
+             <div className="loader animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-solid mx-auto mb-8"></div>
+             <p className="text-lg dark:text-gray-100">Loading services...</p>
+           </div>
           ) : (
             members.map((item) => (
               <div
