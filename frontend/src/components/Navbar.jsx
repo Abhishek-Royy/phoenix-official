@@ -67,7 +67,7 @@ const Navbar = () => {
         initial={false}
         animate={nav ? "open" : "closed"}
         variants={variants}
-        className={`fixed md:hidden left-0 top-20 w-full h-full border-r border-r-gray-900 bg-[#101A26] ease-in-out duration-75 ${
+        className={`fixed md:hidden left-0 top-20 w-full h-full border-r border-r-gray-900 bg-white dark:bg-[#101A26] ease-in-out duration-75 ${
           nav ? "block" : "hidden"
         }`}
       >
@@ -76,7 +76,7 @@ const Navbar = () => {
           <NavLink to={item.route} onClick={() => setNav(false)}>
             <li
               key={item.id}
-              className=" p-4 text-3xl border-b-2 border-white rounded-xl duration-300 hover:text-black text-white cursor-pointer  my-5"
+              className=" p-4 text-center text-3xl   rounded-xl duration-300 hover:text-black dark:text-white  cursor-pointer  my-5"
             >
               {item.text}
             </li>
