@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { RiMenu3Fill } from "react-icons/ri";
-import webLogo from "../assets/phenioxLogo.png";
+// import webLogo from "../assets/phenioxLogo.png";
+import webLogo from "../assets/whiteBg.png";
+// import webLogoo from "../assets/BlackBg.png";
 import Toggle from "@/particals/Toggle";
 import { motion } from "framer-motion";
 import { Link, NavLink } from "react-router-dom";
@@ -34,7 +36,12 @@ const Navbar = () => {
       style={{ boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px" }}
     >
       <Link to="/">
-        <img className="w-[75px]" src={webLogo} alt="Web-logo" />
+        {/* <img className="w-[150px] object-contain" src={webLogo} alt="Web-logo" /> */}
+        <img
+          className="w-[150px] object-contain dark:invert dark:hue-rotate-180"
+          src={webLogo}
+          alt="Web-logo"
+        />
       </Link>
       {/* Desktop Navigation */}
       <ul className="hidden md:flex items-center">
@@ -88,6 +95,110 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// ********************************************************
+
+// import React, { useState, useEffect } from "react";
+// import { IoCloseSharp } from "react-icons/io5";
+// import { RiMenu3Fill } from "react-icons/ri";
+// import whiteLogo from "../assets/whiteBg.png";
+// import blackLogo from "../assets/blackBg.png";
+// import Toggle from "@/particals/Toggle";
+// import { motion } from "framer-motion";
+// import { Link, NavLink } from "react-router-dom";
+
+// const Navbar = () => {
+//   const [nav, setNav] = useState(false);
+//   const [activeMenu, setActiveMenu] = useState("");
+//   const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem("theme") === "dark");
+
+//   const handleNav = () => {
+//     setNav(!nav);
+//   };
+
+//   useEffect(() => {
+//     const handleThemeChange = () => {
+//       setIsDarkMode(localStorage.getItem("theme") === "dark");
+//     };
+
+//     window.addEventListener("storage", handleThemeChange);
+//     return () => {
+//       window.removeEventListener("storage", handleThemeChange);
+//     };
+//   }, []);
+
+//   const navItems = [
+//     { id: 1, text: "Home", route: "/" },
+//     { id: 2, text: "About", route: "/about" },
+//     { id: 3, text: "Service", route: "/services" },
+//     { id: 4, text: "Projects", route: "/projects" },
+//     { id: 5, text: "Team Member", route: "/team-member" },
+//     { id: 6, text: "Contact", route: "/contact" },
+//   ];
+
+//   const variants = {
+//     open: { opacity: 1, x: 0 },
+//     closed: { opacity: 0, x: "100%" },
+//   };
+
+//   return (
+//     <motion.div
+//       className="dark:bg-[#111C29] bg-gray-200 flex justify-between items-center h-20 max-w-full sticky top-0 mx-auto px-2 md:px-32 dark:text-white z-[999999999]"
+//       style={{ boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px" }}
+//     >
+//       <Link to="/">
+//         <img
+//           className="w-[150px] object-contain"
+//           src={isDarkMode ? blackLogo : whiteLogo}
+//           alt="Web-logo"
+//         />
+//       </Link>
+//       <ul className="hidden md:flex items-center">
+//         {navItems.map((item) => (
+//           <li
+//             key={item.id}
+//             className={`p-4 rounded-xl font-semibold m-2 cursor-pointer duration-300 ${
+//               activeMenu === item.text ? "active" : ""
+//             }`}
+//             onMouseEnter={() => setActiveMenu(item.text)}
+//             onMouseLeave={() => setActiveMenu("")}
+//           >
+//             <NavLink to={item.route} className="flex items-center">
+//               {item.text}
+//             </NavLink>
+//           </li>
+//         ))}
+//         <Toggle />
+//       </ul>
+//       <div className="flex md:hidden">
+//         <Toggle />
+//       </div>
+//       <div onClick={handleNav} className="block md:hidden">
+//         {nav ? <IoCloseSharp size={30} /> : <RiMenu3Fill size={30} />}
+//       </div>
+//       <motion.ul
+//         initial={false}
+//         animate={nav ? "open" : "closed"}
+//         variants={variants}
+//         className={`fixed md:hidden left-0 top-20 w-full h-full border-r border-r-gray-900 bg-white dark:bg-[#101A26] ease-in-out duration-75 ${
+//           nav ? "block" : "hidden"
+//         }`}
+//       >
+//         {navItems.map((item) => (
+//           <NavLink key={item.id} to={item.route} onClick={() => setNav(false)}>
+//             <li className="p-4 text-center text-3xl rounded-xl duration-300 hover:text-black dark:text-white cursor-pointer my-5">
+//               {item.text}
+//             </li>
+//           </NavLink>
+//         ))}
+//       </motion.ul>
+//     </motion.div>
+//   );
+// };
+
+// export default Navbar;
+
+// ********************************************************
 
 // import React, { useState, useEffect } from "react";
 // import { IoCloseSharp } from "react-icons/io5";

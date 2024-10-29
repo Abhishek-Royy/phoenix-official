@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Phenix from "../assets/phenioxLogo.png";
+import Phoenix from "../assets/newfooterlogo.png";
 
 const Footer = () => {
   return (
@@ -12,7 +13,12 @@ const Footer = () => {
               <p className="text-[18px] font-medium dark:text-white text-black">
                 <div className="flex-shrink-0">
                   <NavLink to="/">
-                    <img src={Phenix} alt="" width={70} />
+                    <img
+                      className="dark:invert dark:hue-rotate-180"
+                      src={Phoenix}
+                      alt=""
+                      width={90}
+                    />
                   </NavLink>
                 </div>
               </p>
