@@ -1,36 +1,8 @@
-
-import React, {  useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import React from "react";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 function Contactpage() {
-  const form = useRef();
-  const [loading, setLoading] = useState(false);
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    emailjs
-      .sendForm("service_gzda029", "template_y03nfoc", form.current, {
-        publicKey: "CoDf0CpccE7p0mjIR",
-      })
-      .then(
-        (result) => {
-          console.log(result.text);
-          toast.success("Message sent successfully.");
-          setLoading(false);
-          e.target.reset();
-        },
-        (err) => {
-          console.error("FAILED...", err);
-          toast.error("Message failed to send. Please try again.");
-          setLoading(false);
-        }
-      );
-  };
-
   return (
     <div>
       <section className="bg-[#fff] dark:bg-[#111C29]">
@@ -42,7 +14,7 @@ function Contactpage() {
             Got a technical issue? Want to send feedback about a beta feature?
             Need details about our Business plan? Let us know.
           </p>
-          <form ref={form} onSubmit={sendEmail} className="space-y-8">
+          <form className="space-y-8">
             <div>
               <label
                 htmlFor="name"
@@ -111,12 +83,11 @@ function Contactpage() {
               type="submit"
               className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-blue-700 sm:w-fit hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              {loading ? "Sending..." : "Send Message"}
+              Send Message
             </button>
           </form>
         </div>
       </section>
-      <ToastContainer position="bottom-right" theme="colored" />
     </div>
   );
 }
